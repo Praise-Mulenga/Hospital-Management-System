@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block title %}View Patients{% endblock %}
+
+{% block page_content %}
+<div class="card m-4">
+    <div class="card-body">
+        <table id="example" class="table table-striped table-bordered" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Patient ID</th>
+                    <th>Name</th>
+                    <th>Initials</th>
+                    <th>Sex</th>
+                    <th>Address</th>
+                    <th>Post Code</th>
+                    <th>Admission</th>
+                    <th>DOB</th>
+                    <th>Ward ID</th>
+                    <th>Next Of Kin</th> <!-- new column for delete button -->
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for patient in patients %}
+                <tr>
+                    <td>{{patient.patient_id}}</td>
+                    <td>{{patient.name}}</td>
+                    <td>{{patient.initials}}</td>
+                    <td>{{patient.sex}}</td>
+                    <td>{{patient.address}}</td>
+                    <td>{{patient.post_code}}</td>
+                    <td>{{patient.admission}}</td>
+                    <td>{{patient.DOB}}</td>
+                    <td>{{patient.ward_id}}</td>
+                    <td>{{patient.next_of_kin}}</td>
+                    <td>
+                        <a href="{% url 'editpatient' patient.patient_id %}" class="btn btn-primary btn-xs" data-toggle="tooltip" title="Edit">
+                            <i class="fas fa-pencil-alt"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="/delete/{{ patient.patient_id }}" class="btn btn-danger btn-xs" data-toggle="tooltip" title="Delete">
+                            <i class="fa fa-trash"></i>
+                        </a>
+                    </td>                       
+                </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Patient ID</th>
+                    <th>Name</th>
+                    <th>Initials</th>
+                    <th>Sex</th>
+                    <th>Address</th>
+                    <th>Post Code</th>
+                    <th>Admission</th>
+                    <th>DOB</th>
+                    <th>Ward ID</th>
+                    <th>Next Of Kin</th><!-- new column for delete button -->
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+
+
+
+
+                <!--<tr>
+                    <th colspan="10"></th>
+                    <th>Total Patients</th>
+                    <th>{{ total_patients }}</th>
+                    <th colspan="1"></th>
+                </tr> -->
+
+
+
+
+
+            </tfoot>
+        </table>
+    </div>
+  </div>
+{% endblock page_content %}

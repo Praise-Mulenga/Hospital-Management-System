@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+    <a class="navbar-brand" href="home.html">Health Care Hospital</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto"> <!-- ml-auto pushes links to the far left -->
+            <li class="nav-item dropdown px-4">
+                <a class="nav-link dropdown-toggle" href="#" id="enterRecordsDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Enter Records
+                </a>
+                <div class="dropdown-menu" aria-labelledby="enterRecordsDropdown">
+                    <a class="dropdown-item" href="{% url 'Patients' %}">Patient</a>
+                    <a class="dropdown-item" href="{% url 'Wards' %}">Ward</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown px-4">
+                <a class="nav-link dropdown-toggle" href="#" id="enterRecordsDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    View Records
+                </a>
+                <div class="dropdown-menu" aria-labelledby="enterRecordsDropdown">
+                    <a class="dropdown-item" href="{% url 'viewpatients' %}">Patient</a>
+                    <a class="dropdown-item" href="{% url 'viewwards' %}">Ward</a>
+                </div>
+            </li>
+            <li class="nav-item px-4">
+                <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item px-4">
+                <a class="nav-link" href="#">Sign In</a>
+            </li>
+        </ul>
+    </div>
+    </div>
+  </nav>

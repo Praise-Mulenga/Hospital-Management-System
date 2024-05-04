@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}View Wards{% endblock %}
+{% block page_content %}
+<div class="card m-4">
+    <div class="card-body">
+        <table id="example" class="table table-striped table-bordered" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Ward ID</th>
+                    <th>Ward Name</th>
+                    <th>Number Of Beds</th>
+                    <th>Nurse In Charge</th>
+                    <th>Ward Type</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for wards in wards %}
+                <tr>
+                    <td>{{wards.ward_id}}</td>
+                    <td>{{wards.ward_name}}</td>
+                    <td>{{wards.number_beds}}</td>
+                    <td>{{wards.nurse_in_charge}}</td>
+                    <td>{{wards.ward_type}}</td>
+                    <td>
+                        <a href="{% url 'editward' wards.ward_id %}" class="btn btn-primary btn-xs" data-toggle="tooltip" title="Edit">
+                            <i class="fas fa-pencil-alt"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="/delete_ward/{{ wards.ward_id }}" class="btn btn-danger btn-xs" data-toggle="tooltip" title="Delete">
+                            <i class="fa fa-trash"></i>
+                        </a>
+                    </td>   
+                </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Ward ID</th>
+                    <th>Ward Name</th>
+                    <th>Number Of Beds</th>
+                    <th>Nurse In Charge</th>
+                    <th>Ward Type</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+  </div>
+
+{% endblock page_content %}

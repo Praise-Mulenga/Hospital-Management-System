@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block title %}Patients{% endblock %}
+{% block styling %}
+<style>
+    body {
+        background-image:url(https://img3.wallspic.com/crops/5/3/9/2/3/132935/132935-plant-hot_air_balloon-medicine-valentines_day-red-1366x768.jpg);
+    }
+    .form-group {
+        outline: none; /* Remove the outline when focused */
+        margin-bottom: 2rem;
+    }
+    .card {
+        border-radius: 2px solid black; /* Replace "your-color" with the desired border color */
+    }
+    .nav-item:hover {
+        color: rgb(39, 235, 98);
+    }
+    
+    /* Remove the box around form fields */
+    .form-control {
+        border: none; /* Remove the border around form fields */
+        border-bottom: 2.3px solid #fa9d9d; /* Add an underline */
+        border-radius: 0; /* Remove any border radius */
+    }
+    label {
+        font-size: 16px; /* Adjust font size as needed */
+        color: #666; /* Text color */
+        margin-bottom: 0.2rem; /* Spacing between label and input */
+    }
+</style>
+{% endblock styling %}
+{% block page_content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Patient Information</h5>
+                    <form action="" method="POST">{% csrf_token %}
+                        <div class="form-group">
+                            {{ form.patient_id }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.name }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.initials }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.sex }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.address }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.post_code }}
+                        </div>
+                        <div class="form-group">
+                            <label for="admission">Admission Date</label>
+                            {{ form.admission }}
+                            {% for error in form.admission.errors %}
+                                <p class="error">{{ error }}</p>
+                            {% endfor %}
+                        </div>                                               
+                        <div class="form-group">
+                            <label for="DOB">  Date of Birth</label>
+                            {{ form.DOB }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.ward_id }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.next_of_kin }}
+                        </div>
+                        <button type="submit" class="btn btn-danger btn-block">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock page_content %}

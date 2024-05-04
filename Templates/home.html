@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Registration</title>
+    <style>
+        body, html {
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-image: url(https://img3.wallspic.com/crops/5/3/9/2/3/132935/132935-plant-hot_air_balloon-medicine-valentines_day-red-1366x768.jpg);
+        }
+
+        header, nav {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        nav {
+            margin: 0;
+            padding: 5px;
+            text-align: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: large;
+            font-weight: bolder;
+            margin: auto;
+            width: auto;
+        } 
+        .navigation {
+            list-style: none;
+            padding: 0;
+        }
+        .navigation ul {
+            display: inline-block;
+        }
+        .navigation li {
+            margin-right:12px;
+            display: inline;
+        }
+        .navigation a {
+            color: white;
+            text-decoration: none;
+        } 
+
+
+        .text-overlay a {
+            display: inline-block;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            margin: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .text-overlay a:hover {
+            background-color: #0056b3;
+        }
+
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-image: url('images/healthCare (6).jpg'); 
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed; 
+            margin: 0;
+            padding: 0;
+            height: 100vh; 
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+        }
+
+        .navigation_overlay {
+            position: absolute;
+            top: 8%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(22, 105, 212, 0.8);  
+            border-radius: 10px;
+            padding: 20px;
+            color: #fff; 
+            text-align: center;
+            width: 100%;
+        }
+
+        .text-overlay {
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff; 
+            border-radius: 10px; 
+            padding: 1%;
+            padding-top: 2%;
+            color: #fff; 
+            text-align: center;
+            width: 60%;
+            height: 10%;
+        }
+
+        .text-overlay h1 {
+            margin: 0;
+            font-size: 200%;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="background-image"></div>
+        <header>
+            <div class="navigation_overlay">
+                <nav>
+                    <h1>Welcome to Health Care Hospital</h1>
+                    <ul class="navigation">
+                        <li> <a href="services.html"> Services </a> </li>
+                        <li> <a href="about.html"> About us </a> </li>
+                        <li> <a href="doctors.html"> Doctors/Providers </a></li>
+                        <li> <a href="#"> Appointments </a> </li>
+                        <li> <a href="#"> Contact us </a> </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="text-overlay">
+                <a href="http://127.0.0.1:8000/patient/">Patient Registration</a>
+                <a href="http://127.0.0.1:8000/ward/">Ward Registration</a>
+                <a href="http://127.0.0.1:8000/viewpatients/">View Patients</a>
+                <a href="http://127.0.0.1:8000/viewwards/">View Wards</a>
+            </div>
+        </header>  
+    </div>
+</body>
+</html>

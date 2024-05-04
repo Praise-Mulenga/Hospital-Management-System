@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Your Hospital Name</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <style>
+                /* styles.css */
+
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body and text styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header styles */
+        header {
+            background-color: #007acc;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        nav a.active {
+            text-decoration: underline;
+        }
+
+        /* About Us Section styles */
+        .about-section {
+            background-color: #fff;
+            padding: 30px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .about-text {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+        }
+
+        /* Team Section styles */
+        .team-section {
+            background-color: #f4f4f4;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .team-section h2 {
+            margin-bottom: 20px;
+        }
+
+        .team-member {
+            margin: 20px;
+        }
+
+        .team-image img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 50%;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #007acc;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        /* Responsive Styles (adjust as needed for mobile devices) */
+        @media (max-width: 768px) {
+            header .logo {
+                font-size: 20px;
+            }
+
+            nav li {
+                margin: 0 10px;
+            }
+
+            .about-section {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Health Care Hospital</h1>
+            </div>
+            <ul class="nav-links">
+                <li> <a href="home.html"> Home </a> </li>
+                <li> <a href="services.html"> Services </a> </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- About Us Section -->
+    <section class="about-section">
+        <div class="about-text">
+            <h2>About Our Hospital</h2>
+            <p> Welcome to Health Care Hospital, a leading healthcare facility dedicated to providing high-quality medical 
+                services to our community. We have a team of skilled doctors, nurses, and staff who are committed to your 
+                well-being.</p>
+            <p> Our mission is to deliver compassionate and comprehensive healthcare to our patients, ensuring their comfort 
+                and recovery. We are equipped with state-of-the-art medical technology to offer a wide range of medical 
+                services.</p>
+            <p> At Health Care Hospital, we prioritize patient care and safety, and we strive to be a trusted healthcare partner 
+                for you and your family.</p>
+        </div>
+        <div class="about-image">
+            <img src="https://cdn.wallpapersafari.com/47/35/R1oS3j.jpg" style="width:650px;" alt="health care hospital building">
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <h2>Meet Our Team</h2>
+        <div class="team-member">
+            <div class="team-image">
+                <img src="https://m.media-amazon.com/images/M/MV5BZDU5ZTAzMzktOWFjYy00YzVjLWExNDctOTY1ZjQ2M2NmMjA4L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNDkzNTM2ODg@._V1_.jpg" alt="Dr. Ben Carson">
+            </div>
+            <h3>Dr. Ben Carson</h3>
+            <p>Chief Medical Officer</p>
+        </div>
+        <div class="team-member">
+            <div class="team-image">
+                <img src= "https://media.licdn.com/dms/image/D4D03AQGHwyZgHvR7_g/profile-displayphoto-shrink_200_200/0/1704543310555?e=2147483647&v=beta&t=DBI10VEo5e69rOKsacIKgYJVfHBgHjWx87NngYCFG7A" alt="Blessings Mulenga">
+            </div>
+            <h3>Dr. Blessings Mulenga</h3>
+            <p>Neurologist</p>
+        </div>
+        <!-- Add more team members as needed -->
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-logo">
+            <h1>Health Care Hospital</h1>
+        </div>
+        <div class="footer-contact">
+            <p>Contact us at: info@healthcarehospital.com</p>
+        </div>
+    </footer>
+</body>
+</html>

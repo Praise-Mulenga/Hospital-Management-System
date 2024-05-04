@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block title %}Update Patient Information{% endblock %}
+
+{% block styling %}
+<style> 
+    body {
+        background-image: url(https://img3.wallspic.com/crops/5/3/9/2/3/132935/132935-plant-hot_air_balloon-medicine-valentines_day-red-1366x768.jpg);
+    }
+    .form-group {
+        outline: none; /* Remove the outline when focused */
+        margin-bottom: 2rem;
+    }
+    .card {
+        border-radius: 2px solid #afc5ae; /* Replace "your-color" with the desired border color */
+    }
+    .nav-item:hover {
+        color: rgb(39, 235, 98);
+    }
+    
+    /* Remove the box around form fields */
+    .form-control {
+        border: none; /* Remove the border around form fields */
+        border-bottom: 2.3px solid #fa9d9d; /* Add an underline */
+        border-radius: 0; /* Remove any border radius */
+    }
+    label {
+        font-size: 16px; /* Adjust font size as needed */
+        color: #666; /* Text color */
+        margin-bottom: 0.2rem; /* Spacing between label and input */
+    }
+</style>
+{% endblock styling %}
+{% block page_content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Update Patient Information</h5>
+                    <form action="" method="POST">{% csrf_token %}
+                        <div class="form-group">
+                            <label for="patient_id">Patient ID:</label>
+                            <input type="text" class="form-control" name="patient_id" id="patient_id" required maxlength="20" value="{{patients.patient_id }}" readonly />
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" class="form-control" name="name" id="name" required maxlength="100" value="{{ patients.name }}" />
+                        </div>
+                        <div class="form-group">
+                            <label for="initials">Initials:</label>
+                            <input type="text" class="form-control" name="initials" id="initials" required maxlength="100" value="{{ patients.initials }}" />
+                        </div>
+                        <div class="form-group">
+                            <label for="sex">Sex:</label>
+                            <input type="text" class="form-control" name="sex" id="sex" required maxlength="10" value="{{ patients.sex }}" />
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address:</label>
+                            <input type="text" class="form-control" name="address" id="address" required maxlength="255" value="{{ patients.address }}" />
+                        </div>
+                        <div class="form-group">
+                            <label for="post_code">Post Code:</label>
+                            <input type="text" class="form-control" name="post_code" id="post_code" required maxlength="10" value="{{ patients.post_code }}" />
+                        </div>
+                        <div class="form-group">
+                            <label for="admission">Admission Date:</label>
+                            <input type="date" class="form-control" name="admission" id="admission" required value="{{ patients.admission|date:'Y-m-d' }}" />
+                        </div>
+                        <div class="form-group">
+                            <label for="DOB">Date of Birth:</label>
+                            <input type="date" class="form-control" name="DOB" id="DOB" required value="{{ patients.DOB|date:'Y-m-d' }}" />
+                        </div>
+                        <div class="form-group">
+                            <label for="ward_id">Ward ID:</label>
+                            <input type="text" class="form-control" name="ward_id" id="ward_id" required maxlength="20" value="{{ patients.ward_id }}" />
+                        </div>
+                        <div class="form-group">
+                            <label for="next_of_kin">Next of Kin:</label>
+                            <input type="text" class="form-control" name="next_of_kin" id="next_of_kin" required maxlength="255" value="{{ patients.next_of_kin }}" />
+                        </div>
+                        <button type="submit" class="btn btn-danger btn-block">Update</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock page_content %}
+

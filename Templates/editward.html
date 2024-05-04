@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Ward{% endblock %}
+
+{% block styling %}
+<style>
+    .form-control {
+        border: none;
+        border-bottom: 2.3px solid #59cc55; /* Add an underline */
+        border-radius: 0; /* Remove any border radius */
+        outline: none; /* Remove the outline when focused */
+    }
+    .form-group {
+        margin-bottom: 2rem;
+    }
+    .card {
+        border: 2px solid #e9cdcd; /* Replace "your-color" with the desired border color */
+    }
+    .nav-item:hover {
+        color: rgb(39, 235, 98);
+    }
+</style>
+{% endblock styling %}
+
+{% block page_content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Edit Ward Information</h5>
+                    <form method="post" action="">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="ward_id">Ward ID:</label>
+                            <input type="text" class="form-control" name="ward_id" id="ward_id" required maxlength="20" value="{{ ward.ward_id }}" />
+                        </div>
+                        <div class="form-group">
+                            <label for="ward_name">Ward Name:</label>
+                            <input type="text" class="form-control" name="ward_name" id="ward_name" required maxlength="100" value="{{ ward.ward_name }}" />
+                        </div>
+                        <div class="form-group">
+                            <label for="number_beds">Number of Beds:</label>
+                            <input type="number" class="form-control" name="number_beds" id="number_beds" required value="{{ ward.number_beds }}" />
+                        </div>
+                        <div class="form-group">
+                            <label for="nurse_in_charge">Nurse in Charge:</label>
+                            <input type="text" class="form-control" name="nurse_in_charge" id="nurse_in_charge" required maxlength="100" value="{{ ward.nurse_in_charge }}" />
+                        </div>
+                        <div class="form-group">
+                            <label for="ward_type">Ward Type:</label>
+                            <input type="text" class="form-control" name="ward_type" id="ward_type" maxlength="100" value="{{ ward.ward_type }}" />
+                        </div>
+                        <button type="submit" class="btn btn-success btn-block">Update</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock page_content %}
